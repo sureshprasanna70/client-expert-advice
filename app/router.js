@@ -10,7 +10,9 @@ Router.map(function() {
   this.route("login");
   this.route("signup");
   this.route("dashboard", { path: "" }, function() {});
-  this.route('post');
+  this.route('post',function(){
+    this.route('show',{path:"/:id"})
+  });
 });
 
 export default Router;
