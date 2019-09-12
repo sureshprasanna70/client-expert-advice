@@ -1,0 +1,29 @@
+{{yield}}
+<div class="row bootstrap snippets">
+    <div class="col-md-6 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5>Comments ({{post.comments.length}}) </h5> 
+                </div>
+                <div class="panel-body">
+                    <ul class="media-list">
+                        {{#if (eq post.comments.length 0)}}
+                          <p> Be the first to comment </p> 
+                        {{/if}}
+                        {{#each post.comments as |comment|}}
+                        <li class="media">
+                            {{gravatar-image email=comment.user.email size=48 defaultImage='robohash' class="floar-left"}}
+                            <div class="media-body">
+                                <p>
+                                    {{comment.title}}
+                                </p>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
