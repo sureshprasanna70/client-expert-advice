@@ -12,6 +12,7 @@ Router.map(function() {
   this.route("dashboard", { path: "" }, function() {});
   this.route('post',function(){
     this.route('show',{path:"/:id"})
+    this.route('edit',{path:"/edit/:id"})
   });
 });
 
