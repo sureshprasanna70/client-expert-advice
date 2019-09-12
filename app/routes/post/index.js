@@ -4,8 +4,12 @@ import {
 } from '@ember/service';
 
 export default Route.extend({
-  store: service(),
+  infinity: service(),
   model() {
-    return this.store.findAll('post')
+    return this.infinity.model("post", {
+      perPage: 5,
+      totalPagesParam: "meta.pages",
+      countParam: "meta.total"
+    });
   }
 });
