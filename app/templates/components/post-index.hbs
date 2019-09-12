@@ -1,0 +1,21 @@
+{{yield}}
+<div class="card-header p-3 row">
+  <div class="col-1">
+    {{gravatar-image email='johnotander@gmail.com'}}
+  </div>
+  <div class="col-8 header">
+    {{#link-to 'post.show' post.slug}}{{post.title}} {{/link-to}}
+  </div>
+  {{#if currentSession.isAuthenticated}}
+  {{#if (eq currentSession.user.id post.user.id)}}
+  <div class="dropdown col-3 text-right">
+    {{#link-to "post.edit" post.slug class="btn btn-outline-primary"}}{{fa-icon "edit"}}{{/link-to}}
+    <button class="btn btn-outline-danger" {{action 'deletePost' post}}>{{fa-icon "trash-alt"}}</button>
+  </div>
+  {{/if}}
+  {{/if}}
+</div>
+<div class="card-content p-3">
+  <p class="description">{{post.body}}</p>
+  <span>{{fa-icon "eye"}} {{post.views}}</span>
+</div>
