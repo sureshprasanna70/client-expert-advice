@@ -1,0 +1,19 @@
+{{outlet}}
+<br /><br />
+<div class="row">
+  <div class="col-lg-6">
+    <h1> Your comment</h1>
+  </div>
+</div>
+<div class="card">
+  <div class="p-5">
+    {{post-form model=model}}
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success" {{action 'saveComment' model}}>{{fa-icon "save"}} Add
+          Comment</button>
+        {{#link-to 'post' class="btn btn-outline-danger"}} {{fa-icon 'times-circle'}} Cancel {{/link-to}}
+      </div>
+    </div>
+  </div>
+</div>
