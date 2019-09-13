@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('post',function(){
     this.route('show',{path:"/:id"})
     this.route('edit',{path:"/edit/:id"})
+    this.route('comment',{path: '/comment/:post_id'});
   });
 });
 
