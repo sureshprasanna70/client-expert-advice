@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h1>Write Post </h1>
+  </div>
+</div>
+<div class="card">
+  <div class="p-5">
+
+    {{post-form model=model}}
+    <div class="form-group">
+      {{#tag-input
+  tags=tags
+  class="form-control col-sm-offset-2 col-sm-10"
+  placeholder="Tags"
+  addTag=(action 'addTag')
+  removeTagAtIndex=(action 'removeTagAtIndex')
+  as |tag|
+}}
+      {{tag}}
+      {{/tag-input}}
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-outline-success" {{action 'savePost' model}}>{{fa-icon "save"}} Create Post
+        </button>
+        {{#link-to 'post' class="btn btn-outline-danger"}} {{fa-icon 'times-circle'}} Cancel {{/link-to}}
+      </div>
+    </div>
+  </div>
+</div>
