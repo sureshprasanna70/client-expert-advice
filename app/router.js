@@ -11,6 +11,7 @@ Router.map(function() {
   this.route("signup");
   this.route("dashboard", { path: "" }, function() {});
   this.route('post',function(){
+    this.route('new',{path:"/new"})
     this.route('show',{path:"/:id"})
     this.route('edit',{path:"/edit/:id"})
     this.route('comment',{path: '/comment/:post_id'});
