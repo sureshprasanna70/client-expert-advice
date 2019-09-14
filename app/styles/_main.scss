@@ -1,3 +1,134 @@
 main {
   padding-top: 70px;
 }
+
+body {
+  font-family: 'Muli', sans-serif;
+  padding: 20px;
+  background: #f1f1f1;
+  margin-top: 20px;
+}
+
+/* Header/Blog Title */
+.header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.description {
+  font-weight: 500;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Additional helpers */
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 0;
+  margin-top: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 5px;
+
+  .card-header {
+    background-color: transparent;
+
+    img {
+      border-radius: 50em;
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+.comment-wrapper .panel-body {
+  max-height: 650px;
+  overflow: auto;
+}
+
+.comment-wrapper .media-list .media img {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #e5e7e8;
+  margin-top: 12px;
+  border-radius: 25px;
+}
+
+.comment-wrapper .media-list .media {
+  border-bottom: 1px dashed #efefef;
+  margin-bottom: 25px;
+}
+.media-body{
+  padding: 10px;
+}
+
+.infinity-loader {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 25px;
+}
+a:hover{
+  text-decoration: none;
+}
