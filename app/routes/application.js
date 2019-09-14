@@ -1,5 +1,7 @@
 import Route from "@ember/routing/route";
-import { inject } from "@ember/service";
+import {
+  inject
+} from "@ember/service";
 import ApplicationRouteMixin from "ember-simple-auth/mixins/application-route-mixin";
 
 export default Route.extend(ApplicationRouteMixin, {
@@ -7,12 +9,16 @@ export default Route.extend(ApplicationRouteMixin, {
   session: inject(),
   currentSession: inject(),
   // routeAfterAuthentication: null, // Don't trigger transition after authenticate()
-  beforeModel() {
+  beforeModel(transition) {
+    if (!this.get('session.isAuthenticated')) {
+      this.set('session.attemptedTransition', transition);
+    }
     return this._loadCurrentUser();
   },
   sessionAuthenticated() {
     this._super(...arguments);
     this._loadCurrentUser();
+
   },
   _loadCurrentUser() {
     return this.get("currentSession").load();
