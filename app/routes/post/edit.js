@@ -7,7 +7,12 @@ export default Route.extend(AuthenticatedRouteMixin, {
   },
   actions: {
     savePost(post) {
-      post.save().then(() => this.transitionTo('post.show', post.slug));
+      post.save().then(() => { 
+        this.get('notifications').success('Post is saved!!', {
+          autoClear: true
+        });
+        this.transitionTo('post.show', post.slug)
+      });
     }
   }
 });

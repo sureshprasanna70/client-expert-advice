@@ -11,7 +11,12 @@ export default Route.extend(AuthenticatedRouteMixin, {
     saveComment(comment) {
       let post_id = this.get('post_id');
       comment.set('post_id', post_id);
-      comment.save().then(() => this.transitionTo('post'));
+      comment.save().then(() => {
+        this.get('notifications').success('Saved successfully!', {
+          autoClear: true
+        });
+        this.transitionTo('post')
+      });
     }
   }
 });
