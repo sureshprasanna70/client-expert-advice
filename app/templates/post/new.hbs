@@ -21,7 +21,7 @@
     </div>
     <div class="form-group form-buttons">
 
-      <button type="submit" class="btn btn-outline-success" {{action 'savePost' model}}>{{fa-icon "save"}} Create Post
+      <button data-button-save type="submit" class="btn btn-outline-success" {{action 'savePost' model}}>{{fa-icon "save"}} Create Post
       </button>
       {{#link-to 'post' class="btn btn-outline-danger"}} {{fa-icon 'times-circle'}} Cancel {{/link-to}}
     </div>
