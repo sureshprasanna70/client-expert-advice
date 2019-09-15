@@ -60,6 +60,9 @@ module.exports = function(environment) {
   }
   
   if (environment === "production") {
+    ENV.serverURL = "https://api-expert-advice.herokuapp.com";
+    ENV.webURL = "https://client-expert-advice.netlify.com";
+    ENV.webSocketURL = "ws://https://client-expert-advice.netlify.com/cable";
     ENV['ember-cli-mirage'] = {
       enabled: false
     };
