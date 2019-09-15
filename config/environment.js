@@ -10,6 +10,9 @@ module.exports = function(environment) {
         'free-solid-svg-icons': 'all'
       }
     },
+    'ember-cli-notifications': {
+      includeFontAwesome: true
+    },
     locationType: "auto",
     apiNamespace: "api/v1",
     EmberENV: {
