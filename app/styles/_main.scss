@@ -3,7 +3,8 @@ main {
 }
 
 body {
-  font-family: 'Muli', sans-serif;
+  // font-family: 'Muli', sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 20px;
   background: #f1f1f1;
   margin-top: 20px;
@@ -17,7 +18,7 @@ body {
 }
 
 .description {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -69,14 +70,26 @@ body {
 
   .card-header {
     background-color: transparent;
-
+    padding: 15px 0;
     img {
       border-radius: 50em;
       width: 75px;
       height: 75px;
     }
   }
+}
 
+/* Tag item */
+.tag-item{
+  background-color: #c4c4c4;
+  font-size: .8rem;
+  padding: 0.35rem 1.25rem;
+  border-radius: 50em;
+  color: #444;
+}
+
+.tag-input{
+  padding: 0 15px;
 }
 
 /* Clear floats after the columns */
@@ -108,20 +121,26 @@ body {
   overflow: auto;
 }
 
-.comment-wrapper .media-list .media img {
-  width: 48px;
-  height: 48px;
-  border: 2px solid #e5e7e8;
-  margin-top: 12px;
-  border-radius: 25px;
-}
-
-.comment-wrapper .media-list .media {
-  border-bottom: 1px dashed #efefef;
-  margin-bottom: 25px;
-}
-.media-body{
-  padding: 10px;
+.comment-wrapper .media-list{
+  padding-left: 1rem;
+  margin-bottom: 0;
+  .media{
+    &:not(:last-child){
+      border-bottom: 1px solid #efefef;
+      margin-bottom: 0.5rem;
+      padding-bottom: 10px;
+    }
+    .media-body{
+      padding: 10px 10px 0 10px;
+    }
+    img {
+      width: 48px;
+      height: 48px;
+      border: 2px solid #e5e7e8;
+      margin-top: 12px;
+      border-radius: 25px;
+    }
+  }
 }
 
 .infinity-loader {
@@ -131,4 +150,7 @@ body {
 }
 a:hover{
   text-decoration: none;
+}
+.form-buttons{
+  padding-left: 15px;
 }
