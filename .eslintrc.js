@@ -7,6 +7,9 @@ module.exports = {
   plugins: [
     'ember'
   ],
+  globals: {
+    'server': true
+  },
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended'
