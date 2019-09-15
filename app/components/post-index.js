@@ -4,5 +4,14 @@ import {
 } from "@ember/service";
 
 export default Component.extend({
-  currentSession: service()
+  currentSession: service(),
+  actions:{
+    deletePost(post){
+      post.destroyRecord().then(() => {
+        this.get('notifications').success('Post deleted successfully!', {
+          autoClear: true
+        });
+      });
+    }
+  }
 });
