@@ -1,18 +1,9 @@
 {{outlet}}
 <div class="row">
-  <div class="float-left">{{#link-to 'post'}} {{fa-icon "backward"}} All Post{{/link-to}}</div>
+  <div class="float-left">{{#link-to 'post'}} {{fa-icon "angle-left"}} All Posts{{/link-to}}</div>
 </div>
 <div class="card">
   {{post-index post=model}}
- 
-  <div class="tag_list">
-    {{#each model.tag_list as |tag|}}
-    <button class="btn" {{action "searchPosts" tag}}> {{fa-icon "tag"}} {{tag}}</button>
-    {{/each}}
-  </div>
-   <div class="col-lg-4">
-    {{#link-to "post.comment" model.id class="btn btn-outline-info"}}{{fa-icon "comment"}} Add Comment{{/link-to}}
-  </div>
   <div class="p-3">
     {{post-comment post=model}}
   </div>

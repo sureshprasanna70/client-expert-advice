@@ -6,7 +6,7 @@
 <div class="card">
   <div class="p-5">
     {{post-form model=model}}
-    <div class="form-group">
+    <div class="form-group tag-input">
       {{#tag-input
   tags=tags
   class="form-control col-sm-offset-2 col-sm-10"
@@ -17,7 +17,7 @@
       {{tag}}
       {{/tag-input}}
     </div>
-    <div class="form-group">
+    <div class="form-group form-buttons">
       <button type="submit" class="btn btn-outline-success" {{action 'savePost' model}}>{{fa-icon 'save'}} Update
         Post</button>
       {{#link-to 'post' class="btn btn-outline-danger"}} {{fa-icon 'times-circle'}} Cancel{{/link-to}}

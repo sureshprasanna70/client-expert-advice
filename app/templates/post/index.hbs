@@ -1,7 +1,7 @@
 {{outlet}}
 <div class="row">
   <div class="col-lg-6">
-    <h1>All Post </h1>
+    <h1>All Posts </h1>
   </div>
   <div class="col-lg-6">
     {{#link-to 'post.new' class="float-right btn btn-primary"}}{{fa-icon "feather"}} New Post {{/link-to}}
@@ -10,17 +10,9 @@
 {{#each posts as |post|}}
 <div class="card">
   {{post-index post=post}}
-  <div class="tag_list">
-    {{#each post.tag_list as |tag|}}
-    <button class="btn" {{action "searchPosts" tag}}> {{fa-icon "tag"}} {{tag}}</button>
-    {{/each}}
-  </div>
-   <div class="col-lg-3">
-    {{#link-to "post.comment" post.id class="btn btn-outline-info"}}{{fa-icon "comment"}} Add Comment{{/link-to}}
-  </div>
   <div class="p-3">
     {{post-comment post=post}}
   </div>
 </div>
 {{/each}}
-{{{{infinity-loader infinityModel=model  loadText: 'Loading', loadedText: 'Awesome!! You have viewed all posts',}}}}
+{{infinity-loader infinityModel=model  loadText='Loading' loadedText='Awesome!! You have viewed all posts'}}
