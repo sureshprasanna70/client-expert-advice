@@ -9,7 +9,7 @@
 </div>
 {{#each posts as |post|}}
 <div class="card">
-  {{post-index post=post}}
+  {{post-index post=post reloadPost=(action "reloadPost")}}
   <div class="p-3">
     {{post-comment post=post}}
   </div>

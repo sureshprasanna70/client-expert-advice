@@ -9,4 +9,9 @@ import {
 export default Controller.extend({
   currentSession: service(),
   posts: filterBy('model', 'post_id', null),
+  actions:{
+    reloadPost(){
+      this.notifyPropertyChange('model');
+    }
+  }
 });

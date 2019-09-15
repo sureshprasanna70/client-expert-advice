@@ -8,6 +8,7 @@ export default Component.extend({
   actions:{
     deletePost(post){
       post.destroyRecord().then(() => {
+        this.sendAction('reloadPost');
         this.get('notifications').success('Post deleted successfully!', {
           autoClear: true
         });
