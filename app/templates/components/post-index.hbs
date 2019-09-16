@@ -1,7 +1,7 @@
 {{yield}}
 <div class="card-header row m-0">
   <div class="col-1">
-    {{gravatar-image email='johnotander@gmail.com'}}
+    {{gravatar-image email=post.user.email defaultImage='robohash'}}
   <div class="mt-2 text-center">
     {{fa-icon "eye"}} {{post.views}} views
   </div>
@@ -16,15 +16,18 @@
   </div>
   </div>
   {{#if currentSession.isAuthenticated}}
-  {{#if (eq currentSession.user.id post.user.id)}}
-  <div class="dropdown col-3 text-right">
-    {{#link-to "post.edit" post.slug class="btn btn-outline-primary"}}{{fa-icon "edit"}}{{/link-to}}
-    <button data-button-delete class="btn btn-outline-danger" {{action 'deletePost' post}}>{{fa-icon "trash-alt"}}</button>
-  </div>
-  {{/if}}
+    {{#if (eq currentSession.user.id post.user.id)}}
+      <div class="dropdown col-3 text-right">
+        {{#link-to "post.edit" post.slug class="btn btn-outline-primary"}}
+          {{fa-icon "edit"}}
+        {{/link-to}}
+        <button data-button-delete class="btn btn-outline-danger" {{action 'deletePost' post}}>
+          {{fa-icon "trash-alt"}}
+        </button>
+      </div>
+    {{/if}}
   {{/if}}
 
- 
   </div>
 <div class="card-content p-3">
   <p class="description">{{post.body}}</p>
