@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('new',{path:"/new"})
     this.route('show',{path:"/:id"})
     this.route('edit',{path:"/edit/:id"})
-    this.route('comment',{path: '/comment/:post_id'});
+    this.route('comment',{path: '/comment/:post_id/:post_slug'});
   });
 });
 
