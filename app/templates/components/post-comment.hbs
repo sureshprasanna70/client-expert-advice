@@ -1,7 +1,7 @@
 {{yield}}
 <div class="row pl-3 pr-3">
     <h5 class="w-100">{{fa-icon "comment"}} Comments ({{post.comments.length}})
-        {{#link-to "post.comment" post.id class="btn btn-outline-info float-right"}} Add Comment{{/link-to}}
+        {{#link-to "post.comment" post.id post.slug class="btn btn-outline-info float-right"}} Add Comment{{/link-to}}
     </h5>
     <div class="col-md-6 col-sm-12">
         <div class="comment-wrapper">
