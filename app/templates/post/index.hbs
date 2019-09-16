@@ -8,11 +8,12 @@
   </div>
 </div>
 {{#each posts as |post|}}
-<div class="card">
-  {{post-index post=post reloadPost=(action "reloadPost")}}
-  <div class="p-3">
-    {{post-comment post=post}}
+  <div class="card">
+    {{post-index post=post}}
+    <div class="p-3">
+      {{post-comment post=post}}
+    </div>
   </div>
-</div>
 {{/each}}
-{{infinity-loader infinityModel=model  loadText='Loading' loadedText='Awesome!! You have viewed all posts'}}
+
+{{infinity-loader infinityModel=model  loadingText='Loading...' loadedText='You have viewed all the posts!'}}
